@@ -31,6 +31,9 @@ class Settings:
     # model-id formats, so each provider applies its own sensible default
     # (see claude_provider.py / gemini_provider.py) when this is left unset.
     AI_MODEL: str = os.getenv("AI_MODEL", "")
-    CORS_ORIGINS: list = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000").split(",")
+    CORS_ORIGINS: list = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:5173,http://localhost:3000,https://mentra-frontend-jqn1.onrender.com"
+).split(",")
 
 settings = Settings()
