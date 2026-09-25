@@ -8,20 +8,6 @@ python-jose[cryptography]==3.3.0
 python-multipart==0.0.9
 pytest==8.3.3
 httpx==0.28.1
-# Pinned (not an open range) to a version confirmed compatible with the
-# httpx==0.27.2 pinned above (anthropic's own dependency spec through the
-# 0.x series accepts httpx>=0.25,<1 — 0.27.2 satisfies that). Deliberately
-# staying on the 0.x line rather than anthropic>=1.0.0: the 1.0 release
-# switched its HTTP layer to a different, incompatible transport
-# (`httpx2`) and dropped/changed several client-construction parameters,
-# which is a larger, unrelated migration this phase isn't scoped to do.
 anthropic==0.45.2
 python-dotenv==1.0.1
-# google-genai is Google's current official SDK for the Gemini API
-# (replaces the deprecated `google-generativeai` package). Open minor/patch
-# range rather than an exact pin like anthropic above: no known conflict
-# with this file's other pins (its own deps — httpx, pydantic, google-auth —
-# are all compatible with what's already pinned here), so there's no
-# specific version this needs to be locked to; capped below 3.0.0 only to
-# avoid an unreviewed future major-version break.
 google-genai>=2.0.0,<3.0.0
